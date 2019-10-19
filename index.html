@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+<!--CSS-->
+		<link rel="stylesheet" href="./style.css">
+<!--Bootstrap CSS-->
+		<title>Page Title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+	</head>
+	<body>
+<!--ESTE ES EL ENCABEZADO (TITULO)-->
+		<div class="Navigation">
+		<div class="logo">
+			<img src="images/Logo.png" alt="Logo">
+		</div>
+		<div class="panel">
+			<ul class="menu">
+  				<li><a class="active" href="#home">Principal</a></li>
+  				<li><a href="#news">Consejos</a></li>
+  				<li><a href="#contact">Contacto</a></li>
+  				<li><a href="#about">Acerca de</a></li>
+			</ul>
+		</div>
+		</div>
+		<div>
+		<form id="msform">
+<!--SALTO DE FORMULARIOS-->
+			<ul id="progressbar">
+				<li class="active">Registro</li>
+				<li>Sintomas</li>
+				<li>Diagnostico</li>			
+			</ul>
+<!--FIELDSETS-->
+			<fieldset>
+				<h2 class="fs-title">DATOS DE REGISTRO</h2>
+				<h3 class="fs-subtitle">Datos Basicos</h3>
+				<label>Nombres y Apellidos</label>
+				<input type="text" name="nombre" placeholder="Nombres y Apellidos Completos" />
+				<label>Número de Identificación</label>
+				<input type="text" name="identificacion" placeholder="Número de Documento" />
+				<label>Fecha de Nacimiento</label>
+				<input type="date" name="nacimiento" />
+				<label>Número de Contacto</label>
+				<input type="text" name="telefono" placeholder="Número teléfonico" />
+				<label>Correo Electrónico</label>
+				<input type="email" name="correo" placeholder="Dirección de Correo Electrónico" />
+				<input type="button" name="next" class="next action-button" value="Siguiente" />
+			</fieldset>
+			
+			<fieldset>
+				<h2 class="fs-title">SELECCIONA LOS SINTOMAS</h2>
+    			<h3 class="fs-subtitle">Diligencias para tener un Diagnostico</h3>
+				<label>Sufere de Alguna Enfermedad</label>
+				<input type="text" name="enfermedad" placeholder="Indique que Enfermedad" />
+				<label>Presenta Alguno de Estos Sintomas</label>
+				<input type="text" name="sintomas" placeholder="lista de sintomas" />
+				<label>Siente la Necesidad De: </label>
+				<input type="text" name="sintomas 2" placeholder="lista de percusiones" />
+				<label>Presente Problemas De:</label>
+				<input type="text" name="sintomas 3" placeholder="lista de problemas" />
+				<input type="button" name="previous" class="previous action-button" value="Anterior" />
+    			<input type="button" name="next" class="next action-button" value="Siguiente" />
+				
+			</fieldset>
+			
+			<fieldset>
+				<h2 class="fs-title">DIAGNOSTICO</h2>
+    			<h3 class="fs-subtitle">Según los Sintomas</h3>
+
+				<div>
+					<p class="globo">Su diagnostico según los sintomas presentados son: Sufre de.....</p> 
+				</div>
+				<input type="button" name="previous" class="previous action-button" value="Anterior" />
+    			<input type="submit" name="submit" class="submit action-button" value="Finalizar" />
+			</fieldset>
+		</form>
+		</div>
+<!--JavaScript-->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		
+		<script src="./script.js"></script>
+		
+		<div class="footer">
+  		<p>@Copyright 2019</p>
+		</div>
+		
+	</body>
+</html>
