@@ -94,7 +94,7 @@ li a:hover:not(.active) {
 	display: none;
 }
 /*inputs*/
-#msform input, #msform textarea {
+#msform input, #msform textarea, #msform select {
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 3px;

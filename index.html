@@ -17,14 +17,14 @@
 		<div class="panel">
 			<ul class="menu">
   				<li><a class="active" href="#home">Principal</a></li>
-  				<li><a href="#news">Consejos</a></li>
-  				<li><a href="#contact">Contacto</a></li>
-  				<li><a href="#about">Acerca de</a></li>
+  				<li><a href="menu/consejos.php">Consejos</a></li>
+  				<li><a href="menu/contacto.php">Contacto</a></li>
+  				<li><a href="https://www.sedolor.es/pacientes/consejos-y-recomendaciones/">Acerca de</a></li>
 			</ul>
 		</div>
 		</div>
 		<div>
-		<form id="msform">
+		<form action= "php/register.php" method="POST" id="msform">
 <!--SALTO DE FORMULARIOS-->
 			<ul id="progressbar">
 				<li class="active">Registro</li>
@@ -40,27 +40,71 @@
 				<label>Número de Identificación</label>
 				<input type="text" name="identificacion" placeholder="Número de Documento" />
 				<label>Fecha de Nacimiento</label>
-				<input type="date" name="nacimiento" />
+				<input type="text" name="fecha" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}" placeholder="dd/mm/aaaa" />
 				<label>Número de Contacto</label>
 				<input type="text" name="telefono" placeholder="Número teléfonico" />
 				<label>Correo Electrónico</label>
 				<input type="email" name="correo" placeholder="Dirección de Correo Electrónico" />
-				<input type="button" name="next" class="next action-button" value="Siguiente" />
+				<input type="submit" name="registro" class="next action-button" value="Siguiente" />
 			</fieldset>
 			
-			<fieldset>
+			<fieldset id="sm">
 				<h2 class="fs-title">SELECCIONA LOS SINTOMAS</h2>
     			<h3 class="fs-subtitle">Diligencias para tener un Diagnostico</h3>
-				<label>Sufere de Alguna Enfermedad</label>
+				<label>Sufre de Alguna Enfermedad</label>
 				<input type="text" name="enfermedad" placeholder="Indique que Enfermedad" />
+				<label>Presento Accidentes Recientemente</label>
+                <select name="accidente">
+                    <option>Accidentes Recientemente?</option>
+                    <option>Caídas</option>
+                    <option>Choques</option>
+                    <option>Golpes</option>
+                    <option>Proyecciones</option>
+                    <option>Atrapamientos</option>
+                    <option>Sobre-esfuerzos</option>
+                    <option>Ninguno</option>
+                </select>
+                
+				<label>Presento Alguna Lección Recientemente</label>
+                <select name="lesiones">
+                    <option>Lección Recientementes?</option>
+                    <option>Contusiones</option>
+                    <option>Heridas</option>
+                    <option>Hemorragias</option>
+                    <option>Quemaduras</option>
+                    <option>Pérdida de consciencia</option>
+                    <option>Otro</option>
+                    <option>Ninguno</option>
+                </select>
 				<label>Presenta Alguno de Estos Sintomas</label>
-				<input type="text" name="sintomas" placeholder="lista de sintomas" />
-				<label>Siente la Necesidad De: </label>
-				<input type="text" name="sintomas 2" placeholder="lista de percusiones" />
-				<label>Presente Problemas De:</label>
-				<input type="text" name="sintomas 3" placeholder="lista de problemas" />
+                <select name="sintomas">
+                    <option>Presenta Alguno de Estos Sintomas?</option>
+                    <option>Dolor de Oídos</option>
+                    <option>Dolor de Ojos</option>
+                    <option>Dolor de Abdomen</option>
+                    <option>Dolor de Cabeza</option>
+                    <option>Dolor de Pecho</option>
+                    <option>Otro Sintoma</option>
+                    <option>Ninguno</option>
+                </select>
+                <label>Medicamentos Digeridos Recientemente</label>         
+                <select name="medicamento">
+                    <option>Medicamentos Digeridos?</option>
+                    <option>Analgésicos (Ibuprofeno, Advil, Motrin IB, otros)</option>
+                    <option>Desinfectantes</option>
+                    <option>Anti-inflamatorios</option>
+                    <option>Medicamentos antidiarreicos</option>
+                    <option>Antibióticos</option>
+                    <option>Antiácidos</option>
+                    <option>Laxante</option>
+                    <option>Medicamentos para la tos y el resfriado</option>
+                    <option>Medicamentos personales sin refrigeración</option>
+                    <option>Tranquilizantes</option>
+                    <option>Otro</option>
+                    <option>Ninguno</option>
+                </select>
 				<input type="button" name="previous" class="previous action-button" value="Anterior" />
-    			<input type="button" name="next" class="next action-button" value="Siguiente" />
+    			<input type="submit" name="enviarsintomas" class="next action-button" value="Siguiente" />
 				
 			</fieldset>
 			
