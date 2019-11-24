@@ -205,4 +205,19 @@ li a:hover:not(.active) {
    color: white;
    text-align: center;
 }
+.ContenedorFrame{
+margin-left: auto;
+margin-right: auto;
+width: 900px; 
+height: 700px;
+display: block;
+align-items: center;
+vertical-align: middle;
 
+}
+.registro {
+   text-align: center;
+}
+.recordar {
+   text-align: center;
+}

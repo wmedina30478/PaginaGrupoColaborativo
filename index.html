@@ -4,7 +4,7 @@
 <!--CSS-->
 		<link rel="stylesheet" href="./style.css">
 <!--Bootstrap CSS-->
-		<title>Page Title</title>
+		<title>Soluciones Medicas</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="initial-scale=1.0">
 	</head>
@@ -12,18 +12,16 @@
 <!--ESTE ES EL ENCABEZADO (TITULO)-->
 		<div class="Navigation">
 		<div class="logo">
-			<img src="images/Logo.png" alt="Logo">
+            <a href="index.html	"><img src="images/Logo.png" alt="Logo"></a>
 		</div>
 		<div class="panel">
 			<ul class="menu">
-  				<li><a class="active" href="#home">Principal</a></li>
-  				<li><a href="menu/consejos.php">Consejos</a></li>
-  				<li><a href="menu/contacto.php">Contacto</a></li>
+  				<li><a class="active" href="index.html">Principal</a></li>
+  				<li><a href="menu/contacto.html">Contacto</a></li>
   				<li><a href="https://www.sedolor.es/pacientes/consejos-y-recomendaciones/">Acerca de</a></li>
 			</ul>
 		</div>
 		</div>
-		<div>
 		<form action= "php/register.php" method="POST" id="msform">
 <!--SALTO DE FORMULARIOS-->
 			<ul id="progressbar">
@@ -45,9 +43,9 @@
 				<input type="text" name="telefono" placeholder="Número teléfonico" />
 				<label>Correo Electrónico</label>
 				<input type="email" name="correo" placeholder="Dirección de Correo Electrónico" />
-				<input type="submit" name="registro" class="next action-button" value="Siguiente" />
+				<input type="button" name="registro" class="next action-button" value="Siguiente" />
 			</fieldset>
-			
+
 			<fieldset id="sm">
 				<h2 class="fs-title">SELECCIONA LOS SINTOMAS</h2>
     			<h3 class="fs-subtitle">Diligencias para tener un Diagnostico</h3>
@@ -76,17 +74,19 @@
                     <option>Otro</option>
                     <option>Ninguno</option>
                 </select>
-				<label>Presenta Alguno de Estos Sintomas</label>
-                <select name="sintomas">
-                    <option>Presenta Alguno de Estos Sintomas?</option>
-                    <option>Dolor de Oídos</option>
-                    <option>Dolor de Ojos</option>
-                    <option>Dolor de Abdomen</option>
-                    <option>Dolor de Cabeza</option>
-                    <option>Dolor de Pecho</option>
-                    <option>Otro Sintoma</option>
-                    <option>Ninguno</option>
-                </select>
+				
+				<label >Presenta Alguno de Estos Sintomas</label>
+			
+					<select id="sintomas" onchange="mostrar()">
+					  <option value="">Presenta Alguno de Estos Sintomas?</option>
+					  <option value="El dolor de oído puede tener causas que no se deben a una enfermedad subyacente. Por ejemplo, usar accesorios para la cabeza ajustados, usar auriculares poco adecuados, dormir sobre una superficie dura, los aros, rechinar los dientes o tener un objeto atorado en el oído.">Dolor de Oídos</option>
+					  <option value="El dolor abdominal puede tener causas que no se deben a una enfermedad subyacente. Por ejemplo, constipación, gases, comer en exceso, estrés o distensión muscular.">Dolor de Abdomen</option>
+					  <option value="Los dolores de cabeza pueden tener causas que no se deben a una enfermedad subyacente. Por ejemplo, falta de sueño, aumento incorrecto de los anteojos recetados, exposición a ruidos fuertes o uso de gorros o sombreros ajustados.">Dolor de Cabeza</option>
+					  <option value="El dolor en el pecho puede tener causas que no se deben a una enfermedad subyacente. Por ejemplo, levantar mucho peso, realizar levantamiento de pesas, recibir un traumatismo en el pecho o tragarse un trozo grande de comida.">Dolor de Pecho</option>
+					  <option value="Si presenta otro sintoma se recomienda contactar con su doctor de confianza.">Otro Sintoma</option>
+					</select>
+					  
+				  
                 <label>Medicamentos Digeridos Recientemente</label>         
                 <select name="medicamento">
                     <option>Medicamentos Digeridos?</option>
@@ -104,22 +104,35 @@
                     <option>Ninguno</option>
                 </select>
 				<input type="button" name="previous" class="previous action-button" value="Anterior" />
-    			<input type="submit" name="enviarsintomas" class="next action-button" value="Siguiente" />
+    			<input type="button" name="enviarsintomas" class="next action-button" value="Siguiente" />
 				
 			</fieldset>
 			
 			<fieldset>
 				<h2 class="fs-title">DIAGNOSTICO</h2>
     			<h3 class="fs-subtitle">Según los Sintomas</h3>
-
 				<div>
-					<p class="globo">Su diagnostico según los sintomas presentados son: Sufre de.....</p> 
+					<p >Su diagnostico según los sintomas presentados son: ....
+				<script>
+					var valor = document.getElementById("parrafo").value;
+				</script>
+<!-- valores de la casilla donde se muestra el diagnostico -->
+					<textarea class="respuesta" id="valor"  name="respuesta"  cols="80" rows="10"></textarea>
+					</p>
+<!-- script que hace que muestre el diagnostico -->
+					<script>
+						function mostrar() {
+						  var sintomas = document.getElementById("sintomas"),
+							 valor = document.getElementById("valor");
+						
+						  valor.value = sintomas.value;
+							}
+						</script>
 				</div>
 				<input type="button" name="previous" class="previous action-button" value="Anterior" />
     			<input type="submit" name="submit" class="submit action-button" value="Finalizar" />
 			</fieldset>
 		</form>
-		</div>
 <!--JavaScript-->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>

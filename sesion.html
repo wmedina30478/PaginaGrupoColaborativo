@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+<!--CSS-->
+		<link rel="stylesheet" href="./style.css">
+<!--Bootstrap CSS-->
+		<title>Inicio de Sesión Soluciones Medicas</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+	</head> 
+	<body>
+		<form method="POST" id="msform" action="php/Inicio Sesion/validar.php" onsubmit="return validar()">
+<!--FIELDSETS-->
+			<fieldset>
+				<h2 class="fs-title">INICIO DE SESIÓN</h2>
+				<h3 class="fs-subtitle">Favor Autentificarse</h3>
+				<label>Nombre de Usuario</label>
+				<input type="text" name="usuario" placeholder="Ingrese Nombre de Usuario" id="usuario" required/>
+				<label>Escriba Contrase&ntilde;a</label>
+				<input type="password" name="contrasena" placeholder="Ingrese su Contrase&ntilde;a" id="contrasena" required/>
+				<input type="submit" name="Ingresar" value="Ingresar" class="next action-button" />
+			</fieldset>   
+		</form>
+        <div class="registro">
+            <a href="php/Inicio%20Sesion/formulario.html">Registrarse</a>
+        </div> 
+        <div class="footer">
+  		<p>@Copyright 2019</p>
+		</div>
+    </body>
+</html>
